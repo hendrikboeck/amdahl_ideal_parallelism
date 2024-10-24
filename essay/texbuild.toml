@@ -1,0 +1,19 @@
+[project]
+name = "Essay - On the Convergence of Amdahl's Law to the Ideal Parallel Speedup Under Specific Conditions"
+version = "0.1.0"
+
+[files]
+main = "essay.tex"
+
+[dependencies.kaobook]
+git = "https://github.com/fmarotta/kaobook.git"
+branch = "master"
+use_texlive = true
+cache = true
+files = [
+    "kao.sty",
+    "kaobiblio.sty",
+    "kaobook.cls",
+    "kaorefs.sty",
+    "kaotheorems.sty",
+]
