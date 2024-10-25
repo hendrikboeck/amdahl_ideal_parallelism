@@ -282,14 +282,14 @@ Amdahl's Law predicts the speedup on $p$ processors as:
 
 As a direct consequence of the presence of dependencies among parallelizable tasks or variations in their execution times, Amdahl's Law overestimates the potential speedup. This is a result from the increased critical path length due to the dependencies, which inherently limits parallel efficiency and reduces the achievable speedup. The ideal parallel speedup $S_{\text{ideal}}$, determined by the ratio of the total work to the critical path length, as defined by the Work/Span model, is therefore given by:
 \begin{equation}
-  \lim_{p \to \infty} S_{\text{ideal}} = \frac{T_w}{T_{\text{span}}} = \frac{T_1}{T_x + \max((\max(t_A, t_B), t_C), t_D) + T_y}
+  \lim_{p \to \infty} S_{\text{max}} = S_{\text{ideal}} = \frac{T_w}{T_{\text{span}}} = \frac{T_1}{T_x + \max((\max(t_A, t_B) + t_C), t_D) + T_y}
 \end{equation}
 
 \subsubsection*{Result:}
 
-As $\max((\max(t_A, t_B), t_C), t_D) > 0$ applies in this case, the ideal parallel speedup $S_{\text{ideal}}$ is significantly lower than the limiting speedup predicted by Amdahl's Law. Therefore, in scenarios where tasks exhibit dependencies or non-uniform execution times, the equivalence between Amdahl's Law and the Work/Span model does not hold, and no direct relation exists between the two:
+As $\max((\max(t_A, t_B) + t_C), t_D) > 0$ applies in this case, the ideal parallel speedup $S_{\text{ideal}}$ is significantly lower than the limiting speedup predicted by Amdahl's Law. Therefore, in scenarios where tasks exhibit dependencies or non-uniform execution times, the equivalence between Amdahl's Law and the Work/Span model does not hold, and no direct relation exists between the two:
 \begin{equation}
-  \lim_{p \to \infty} S_p = \frac{1}{s} > \lim_{p \to \infty} S_{\text{ideal}} = \frac{T_w}{T_{\text{span}}}
+  \lim_{p \to \infty} S_p = \frac{1}{s} > \lim_{p \to \infty} S_{\text{max}} = S_{\text{ideal}} = \frac{T_w}{T_{\text{span}}}
 \end{equation}
 
 \section{Conclusion}
