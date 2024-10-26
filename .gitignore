@@ -329,3 +329,6 @@ TSWLatexianTemp*
 
 # End of https://www.toptal.com/developers/gitignore/api/tex,latex
 _ignore
+*.out.ps
+*.bak
+*.bak0
