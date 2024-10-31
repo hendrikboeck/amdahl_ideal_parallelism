@@ -23,7 +23,7 @@ REPO_CLONE_PATH = /tmp/kaobook
 TEXMFHOME ?= $(HOME)/texmf
 DESTINATION_PATH = $(TEXMFHOME)/tex/latex/kaobook
 
-FILES_TO_COPY = kao.sty kaobiblio.sty kaobook.cls kaohandt.clsakorefs.sty kaotheorems.sty
+FILES_TO_COPY = kao.sty kaobiblio.sty kaobook.cls kaohandt.cls kaorefs.sty kaotheorems.sty
 
 # Default LaTeX file
 DEFAULT_LATEXFILE = essay.tex
@@ -126,6 +126,7 @@ clone:
 
 copy:
 	@printf "$(CYAN)-- Copying necessary files...$(NC)\n"
+	@mkdir -p $(DESTINATION_PATH)
 	@for FILE in $(FILES_TO_COPY); do \
 		if [ -f "$(REPO_CLONE_PATH)/$$FILE" ] || [ -d "$(REPO_CLONE_PATH)/$$FILE" ]; then \
 			cp -f "$(REPO_CLONE_PATH)/$$FILE" "$(DESTINATION_PATH)/" >/dev/null 2>&1; \
